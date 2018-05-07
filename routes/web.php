@@ -20,7 +20,7 @@ Route::get('ID/{id}',function($id){
  });
 
 Route::get('role',[
-    'middleware' => 'Role:editor',
+    'middleware' => 'role:editor',
     'uses' => 'TestController@index',
 ]);
 
