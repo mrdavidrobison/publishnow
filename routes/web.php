@@ -9,22 +9,22 @@
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+ */
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('ID/{id}',function($id){
-    echo 'ID: '.$id;
- });
+Route::get('ID/{id}', function ($id) {
+    echo 'ID: ' . $id;
+});
 
-Route::get('role',[
+Route::get('role', [
     'middleware' => 'role:editor',
     'uses' => 'TestController@index',
 ]);
 
-Route::get('terminate',[
+Route::get('terminate', [
     'middleware' => 'terminate',
     'uses' => 'ABCController@index',
 ]);
@@ -34,12 +34,14 @@ Route::get('profile', [
     'uses' => 'UserController@showProfile',
 ]);
 
-Route::get('/usercontroller/path',[
+Route::get('/usercontroller/path', [
     'middleware' => 'First',
-    'uses' => 'UserController@showPath'
+    'uses' => 'UserController@showPath',
 ]);
 
-Route::get('/usercontroller/path',[
+Route::get('/usercontroller/path', [
     'middleware' => 'Second',
-    'uses' => 'UserController@showPath'
+    'uses' => 'UserController@showPath',
 ]);
+
+Route::resource('my', 'MyController');
