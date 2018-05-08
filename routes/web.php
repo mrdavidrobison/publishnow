@@ -28,3 +28,18 @@ Route::get('terminate',[
     'middleware' => 'terminate',
     'uses' => 'ABCController@index',
 ]);
+
+Route::get('profile', [
+    'middleware' => 'auth',
+    'uses' => 'UserController@showProfile',
+]);
+
+Route::get('/usercontroller/path',[
+    'middleware' => 'First',
+    'uses' => 'UserController@showPath'
+]);
+
+Route::get('/usercontroller/path',[
+    'middleware' => 'Second',
+    'uses' => 'UserController@showPath'
+]);
