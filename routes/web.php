@@ -86,8 +86,7 @@ Route::get('json', function () {
 });
 
 Route::get('/test', function () {
-    $name = "David Robison";
-    return view('test', ['name' => "david r"]);
+    return view('test');
 });
 
 Route::get('/test2', function () {
