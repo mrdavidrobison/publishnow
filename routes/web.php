@@ -63,3 +63,33 @@ Route::post('/user/register', [
 
 Route::get('/cookie/set', 'CookieController@setCookie');
 Route::get('/cookie/get', 'CookieController@getCookie');
+
+Route::get('/basic_response', function () {
+    return 'Hello World';
+    return response($content, $status)
+        ->header('Content-Type', $type)
+        ->header('X-Header-One', 'Header Value')
+        ->header('X-Header-Two', 'Header Value');
+});
+
+Route::get('/header', function () {
+    return response("Hello", 200)->header('Content-Type', 'text/html');
+});
+
+Route::get('/cookie', function () {
+    return response("Hello", 200)->header('Content-Type', 'text/html')
+        ->withcookie('name', 'david d');
+});
+
+Route::get('json', function () {
+    return response()->json(['name' => 'David D', 'state' => 'Idaho']);
+});
+
+Route::get('/test', function () {
+    $name = "David Robison";
+    return view('test', ['name' => "david r"]);
+});
+
+Route::get('/test2', function () {
+    return view('test2');
+});
