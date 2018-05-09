@@ -56,6 +56,10 @@ Route::get('/foo/bar', 'UriController@index');
 Route::get('/register', function () {
     return view('register');
 });
+
 Route::post('/user/register', [
     'uses' => 'UserRegistration@postRegister'
 ]);
+
+Route::get('/cookie/set', 'CookieController@setCookie');
+Route::get('/cookie/get', 'CookieController@getCookie');
