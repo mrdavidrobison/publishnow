@@ -31,17 +31,23 @@ Route::get('terminate', [
 
 Route::get('profile', [
     'middleware' => 'auth',
-    'uses' => 'UserController@showProfile',
-]);
-
-Route::get('/usercontroller/path', [
-    'middleware' => 'First',
     'uses' => 'UserController@showPath',
 ]);
 
 Route::get('/usercontroller/path', [
-    'middleware' => 'Second',
+    'middleware' => 'first',
+    'uses' => 'UserController@showPath',
+]);
+
+Route::get('/usercontroller/path', [
+    'middleware' => 'second',
     'uses' => 'UserController@showPath',
 ]);
 
 Route::resource('my', 'MyController');
+
+class MyClass
+{
+    public $foo = 'bar';
+}
+Route::get('/myclass', 'ImplicitController@index');

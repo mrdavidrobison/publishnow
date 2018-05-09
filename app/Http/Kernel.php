@@ -61,5 +61,8 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'role' => \App\Http\Middleware\RoleMiddleware::class,
         'terminate' => \App\Http\Middleware\TerminateMiddleware::class,
+        'auth' => \App\Http\Middleware\TerminateMiddleware::class,
+        'First' => \App\Http\Middleware\FirstMiddleware::class,
+        'Second' => \App\Http\Middleware\SecondMiddleware::class,
     ];
 }
