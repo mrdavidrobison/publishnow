@@ -86,7 +86,12 @@ Route::get('json', function () {
 });
 
 Route::get('/test', function () {
+<<<<<<< HEAD
     return view('test');
+=======
+    $name = "David Robison";
+    return view('test', ['name' => "david r"]);
+>>>>>>> master
 });
 
 Route::get('/test2', function () {
