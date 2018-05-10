@@ -85,10 +85,19 @@ Route::get('json', function () {
     return response()->json(['name' => 'David D', 'state' => 'Idaho']);
 });
 
-Route::get('/test', function () {
-    return view('test');
+Route::get('/test', ['as' => 'testing', function () {
+    return view('test2');
+}]);
+
+Route::get('redirect', function () {
+    return redirect()->route('testing');
 });
 
 Route::get('/test2', function () {
     return view('test2');
+});
+
+Route::get('rr', 'RedirectController@index');
+Route::get('/redirectcontroller', function () {
+    return redirect()->action('RedirectController@index');
 });
