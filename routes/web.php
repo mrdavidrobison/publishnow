@@ -105,3 +105,5 @@ Route::get('/redirectcontroller', function () {
 Route::get('/form', function () {
     return view('form');
 });
+
+Route::get('localization/{locale}','LocalizationController@index');
