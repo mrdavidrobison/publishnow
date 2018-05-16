@@ -1,12 +1,14 @@
 <html>
-   <head>
-      <title>Ajax Example</title>
-      
-      <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
-      </script>
-      
-      <script>
-         function getMessage(){
+
+<head>
+    <title>Ajax Example</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+
+    </script>
+
+    <script>
+        function getMessage(){
             $.ajax({
                type:'POST',
                url:'/getmsg',
@@ -16,15 +18,14 @@
                }
             });
          }
-      </script>
-   </head>
-   
-   <body>
-      <div id = 'msg'>This message will be replaced using Ajax. 
-         Click the button to replace the message.</div>
-      <?php
+    </script>
+</head>
+
+<body>
+    <div id='msg'>This message will be replaced using Ajax. Click the button to replace the message.</div>
+    <?php
          echo Form::button('Replace Message',['onClick'=>'getMessage()']);
       ?>
-   </body>
+</body>
 
 </html>
