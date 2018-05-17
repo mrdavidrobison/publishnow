@@ -130,3 +130,9 @@ Route::post('/getmsg', 'AjaxController@index');
 Route::get('/facadeex', function () {
     return TestFacades::testingFacades();
 });
+
+// specific pages
+
+Route::get('top-sellers', function () {
+    return view('top-sellers');
+});
