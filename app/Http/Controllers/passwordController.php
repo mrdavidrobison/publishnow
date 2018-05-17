@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use App\Http\Controllers\Controller
+use App\Http\Controllers\Controller;
 
 class passwordController extends Controller
 {
@@ -26,3 +26,4 @@ class passwordController extends Controller
             // The passwords match...
          }
     }
+}
