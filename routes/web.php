@@ -133,6 +133,6 @@ Route::get('/facadeex', function () {
 
 // specific pages
 
-Route::get('top-sellers', function () {
-    return view('top-sellers');
+Route::get('add-books', function () {
+    return view('add-books');
 });
