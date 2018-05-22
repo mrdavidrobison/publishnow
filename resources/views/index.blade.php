@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,16 +11,29 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
     <title>PublishNow</title>
 </head>
+
 <body class='content'>
 
     <div id="app">
+        <span>@{{message}}</span><br/>
+        <input v-model="message">
         <h1>PublishNow</h1>
-        @include('add-books')
+    @include('add-books')
         <modal></modal>
     </div>
 
     <script>
+
+        var message = 'Vue.js is rad';
+        new Vue({
+            el: "#app",
+            data: { 
+                message 
+            } 
+        });
+
         Vue.component('modal', {
+            
             template: `
             <div class="modal is-active">
                 <div class="modal-background"></div>
@@ -33,11 +47,9 @@
             `
         });
 
-        new Vue({
-            el: "#app"
-        });
 
 
     </script>
 </body>
+
 </html>
